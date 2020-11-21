@@ -11,21 +11,21 @@ export class UserProvider extends Component {
         name: "Enes Yilmaz",
         salary : "5000",
         department : "Informatik",
-        ort: "Dortmund"
+        place: "Dortmund"
       },
       {
         id:2,
         name: "Büsra Yilmaz",
         salary : "5000",
         department : "Lehrerin",
-        ort: "Hannover"
+        place: "Hannover"
       },
       {
         id:3,
         name: "Enes Kement",
         salary : "4000",
         department : "Gebäudetechniker",
-        ort: "Hamburg"
+        place: "Hamburg"
       }
     ]
   }
