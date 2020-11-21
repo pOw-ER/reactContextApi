@@ -24,6 +24,7 @@ class Users extends Component {
                         name = {user.name}
                         salary = {user.salary}
                         department = {user.department}
+                        ort = {user.ort}
                       />
                     )
                   })
