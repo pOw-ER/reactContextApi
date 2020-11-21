@@ -10,7 +10,8 @@ class User extends Component {
   static defaultProps = {
     name : "Keine Info",
     salary : "Keine Info",
-    department : "Keine Info"
+    department : "Keine Info",
+    ort : "Kein Info"
   }
 
   onClickEvent= (e) => {
@@ -26,7 +27,7 @@ class User extends Component {
   render() {
 
     // Destructing
-    const {name,department, salary} = this.props;
+    const {name,department, salary,ort} = this.props;
     const {isVisible} = this.state;
     return (
       <div className="col-md-8 mb-4">
@@ -50,7 +51,8 @@ class User extends Component {
 User.propTypes = {
   name : PropTypes.string.isRequired,
   salary : PropTypes.string.isRequired,
-  department : PropTypes.string.isRequired
+  department : PropTypes.string.isRequired,
+  ort : PropTypes.string.isRequired
 }
 
 export default User;
