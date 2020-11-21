@@ -11,7 +11,7 @@ class User extends Component {
     name : "Keine Info",
     salary : "Keine Info",
     department : "Keine Info",
-    ort : "Kein Info"
+    place : "Kein Info"
   }
 
   onClickEvent= (e) => {
@@ -27,7 +27,7 @@ class User extends Component {
   render() {
 
     // Destructing
-    const {name,department, salary,ort} = this.props;
+    const {name,department, salary,place} = this.props;
     const {isVisible} = this.state;
     return (
       <div className="col-md-8 mb-4">
@@ -40,7 +40,7 @@ class User extends Component {
           <div className = "card-body">
             <p className="card-text">Gehalt : {salary}</p>
             <p className="card-text">Abteilung : {department}</p>
-            <p className="card-text">Ort : {ort}</p>
+            <p className="card-text">Ort : {place}</p>
           </div> : null
           }
         </div>
@@ -52,7 +52,7 @@ User.propTypes = {
   name : PropTypes.string.isRequired,
   salary : PropTypes.string.isRequired,
   department : PropTypes.string.isRequired,
-  ort : PropTypes.string.isRequired
+  place : PropTypes.string.isRequired
 }
 
 export default User;
