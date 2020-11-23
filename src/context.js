@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 
-const UserContext = React.createContext();
+const UserContext = React.createContext(); // provider, consumer
+
+const reducer = (state,action) => {
+  switch (action.type) {
+    case "DELETE_USER":
+      return {
+        ...state,
+        users : state.users.filter(user => action.payload !== user.id)
+      }
+
+    default:
+      return state
+  }
+}
 
 export class UserProvider extends Component {
   state = { // biz state olusturduk. bunu props olrak users a aktaricaz. bu normalde kullnamaamiz gereken bir yöntem ama ögrenmek icin yapiyoruz. Context api olmadan olunca
@@ -27,7 +40,10 @@ export class UserProvider extends Component {
         department : "Gebäudetechniker",
         place: "Hamburg"
       }
-    ]
+    ],
+    dispatch : action => {
+      this.setState(state => reducer(state,action))
+    }
   }
   render() {
     return (
