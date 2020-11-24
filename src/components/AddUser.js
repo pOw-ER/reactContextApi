@@ -30,7 +30,7 @@ class AddUser extends Component {
   render() {
     const {visible}= this.state
     return (
-      <div className="col-md-8 mb-4">
+      <div className="col-md-8 my-4">
         <button onClick={this.changeVisibility} className="btn btn-dark btn-block mb-2">{visible ? "Hide Form" : "Show Form"}</button>
         <Animation pose = {visible ? 'visible' : 'hidden'}>
         <div className="card">
