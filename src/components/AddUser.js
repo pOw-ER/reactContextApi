@@ -19,7 +19,11 @@ const Animation = posed.div({
 class AddUser extends Component {
 
   state = {
-    visible : false
+    visible : false,
+    name : "",
+    salary : "",
+    department :"",
+    place : ""
   }
 
   changeVisibility = (e) => {
@@ -27,8 +31,16 @@ class AddUser extends Component {
       visible : !this.state.visible
     })
   }
+  // state koyup degistirmek icin onChange = {this.changeInput} taki gibi  bir fonksiyon yazmak gerekir
+  changeInput = (e)=> {
+    this.setState({
+      [e.target.name] : e.target.value
+    })
+  }
+
+
   render() {
-    const {visible}= this.state
+    const {visible,name,salary,department,place}= this.state
     return (
       <div className="col-md-8 my-4">
         <button onClick={this.changeVisibility} className="btn btn-dark btn-block mb-2">{visible ? "Hide Form" : "Show Form"}</button>
@@ -47,6 +59,8 @@ class AddUser extends Component {
                   id="name"
                   placeholder="Enter your name"
                   class="form-control"
+                  value = {name}
+                  onChange = {this.changeInput}
                 />
               </div>
               <div className="form-group">
@@ -57,6 +71,8 @@ class AddUser extends Component {
                   id="department"
                   placeholder="Enter your department"
                   class="form-control"
+                  value = {department}
+                  onChange = {this.changeInput} //value degistirmek icin bu fonksiyon sart
                 />
               </div>
               <div className="form-group">
@@ -67,6 +83,8 @@ class AddUser extends Component {
                   id="salary"
                   placeholder="Enter your salary"
                   class="form-control"
+                  value = {salary}
+                  onChange = {this.changeInput}
                 />
               </div>
               <div className="form-group">
@@ -77,6 +95,8 @@ class AddUser extends Component {
                   id="place"
                   placeholder="Enter your place"
                   class="form-control"
+                  value = {place}
+                  onChange = {this.changeInput}
                 />
               </div>
               <button className="btn btn-danger btn-block" type="submit">Add User</button>
