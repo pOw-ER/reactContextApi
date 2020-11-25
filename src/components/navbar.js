@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Navbar =(props) => {
   return (
-    <div>
+    <div className="mt-4">
       <h3>{props.title}</h3>
     </div>
   )
