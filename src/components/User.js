@@ -9,10 +9,10 @@ class User extends Component {
   }
 
   static defaultProps = {
-    name : "Keine Info",
-    salary : "Keine Info",
-    department : "Keine Info",
-    place : "Kein Info"
+    name : "Keine Information",
+    salary : "Keine Information",
+    department : "Keine Information",
+    place : "Kein Information"
   }
 
   onClickEvent= (e) => {
