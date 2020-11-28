@@ -26,6 +26,11 @@ class User extends Component {
     // consumer dispatch
     dispatch ({type : "DELETE_USER", payload:id})
   }
+
+  componentWillUnmount() {
+    console.log("Component Will Anmount");// component silme islemi gerceklestiginde calisir.
+  }
+
   render() {
 
     // Destructing
