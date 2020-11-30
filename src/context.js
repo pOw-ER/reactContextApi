@@ -22,29 +22,7 @@ const reducer = (state,action) => {
 export class UserProvider extends Component {
   state = { // biz state olusturduk. bunu props olrak users a aktaricaz. bu normalde kullnamaamiz gereken bir yöntem ama ögrenmek icin yapiyoruz. Context api olmadan olunca
 
-    users : [
-      {
-        id:"unique-1",
-        name: "Enes Yilmaz",
-        salary : "5000",
-        department : "Informatik",
-        place: "Dortmund"
-      },
-      {
-        id:"unique-2",
-        name: "Büsra Yilmaz",
-        salary : "5000",
-        department : "Lehrerin",
-        place: "Hannover"
-      },
-      {
-        id:"unique-3",
-        name: "Enes Kement",
-        salary : "4000",
-        department : "Gebäudetechniker",
-        place: "Hamburg"
-      }
-    ],
+    users : [], // json ile yaptik o yüzden burdan aldik.
     dispatch : action => {
       this.setState(state => reducer(state,action))
     }
