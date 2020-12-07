@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import posed from "react-pose"
 import UserConsumer from "../context"
+import axios from 'axios'
 
-var uniqid = require('uniqid'); // uniq id üretme kütüphanesi // npm install uniqid olarak yükledikten sonra bu sekilde tanimliyoruz
+// var uniqid = require('uniqid'); // uniq id üretme kütüphanesi // npm install uniqid olarak yükledikten sonra bu sekilde tanimliyoruz
 // pose animation (react te bir animasyon kütüphanesi)
 const Animation = posed.div({
   visible : {
@@ -39,12 +40,12 @@ class AddUser extends Component {
       [e.target.name] : e.target.value
     })
   }
-  addUser = (dispatch,e)=>{
+  addUser = async (dispatch,e)=>{
     e.preventDefault();
     const {name,department,salary,place} = this.state;
 
     const newUser = {
-      id : uniqid(),
+
       // name: name,
       // salary:salary,
       // department : department,
@@ -55,7 +56,9 @@ class AddUser extends Component {
       salary,
       place
     }
-    dispatch({type:"ADD_USER",payload:newUser});
+    const response = await axios.post("http://localhost:3004/users",newUser)
+
+    dispatch({type:"ADD_USER",payload:response.data});
   }
 
 
