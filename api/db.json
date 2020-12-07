@@ -1,25 +1,32 @@
 {
-  "users":[
+  "users": [
     {
-      "id" :"unique-1",
-      "name" : "Enes Yilmaz",
-      "salary" : "5000",
-      "department" : "Informatik",
+      "id": "unique-1",
+      "name": "Enes Yilmaz",
+      "salary": "5000",
+      "department": "Informatik",
       "place": "Dortmund"
     },
     {
-      "id":"unique-2",
+      "id": "unique-2",
       "name": "Büsra Yilmaz",
-      "salary" : "5000",
-      "department" : "Lehrerin",
+      "salary": "5000",
+      "department": "Lehrerin",
       "place": "Hannover"
     },
     {
-      "id":"unique-3",
-      "name": "Enes Kement",
-      "salary" : "4000",
-      "department" : "Gebäudetechniker",
-      "place": "Hamburg"
+      "name": "Esra Kement",
+      "department": "Übersetserin",
+      "salary": "1000",
+      "place": "Hamburg",
+      "id": "7bUJI4G"
+    },
+    {
+      "name": "Emre Kement",
+      "department": "Sportler",
+      "salary": "1500",
+      "place": "Hamburg",
+      "id": "JDJB19Y"
     }
   ]
 }
