@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import "./App.css"
 import AddUser from './components/AddUser'
-import Navbar from "./components/Navbar"
+import Navbar from "./layout/Navbar"
 import Users from "./components/Users"
-import NotFound from "./components/NotFound"
-
+import NotFound from "./pages/NotFound"
+import Contribute from './pages/Contribute'
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 
 class App extends Component {
@@ -18,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component ={Users}/>
             <Route exact path="/add" component ={AddUser}/>
+            <Route exact path="/github" component={Contribute}/>
             <Route component={NotFound}/>
           </Switch>
 
