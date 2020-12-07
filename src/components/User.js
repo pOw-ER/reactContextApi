@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import UserConsumer from "../context"
+import axios from 'axios'
 
 
 class User extends Component {
@@ -21,15 +22,17 @@ class User extends Component {
     })
   }
 
-  onDeleteUser = (dispatch,e)=> {
+  onDeleteUser = async (dispatch,e)=> {
     const {id} = this.props;
+    //delete request
+    await axios.delete(`http://localhost:3004/users/${id}`);// burda db.json dan da silmis oluyoruz. yani databesimiz diyebilirz. http://localhost:3004/users/unique-1 bölyle sadece 1. elemana ulasaniliyorduk ondann dolayi silmek icin son kisma id yazmamiz yteterli oluyor.
     // consumer dispatch
     dispatch ({type : "DELETE_USER", payload:id})
   }
 
-  componentWillUnmount() {
-    console.log("Component Will Anmount");// component silme islemi gerceklestiginde calisir.
-  }
+  // componentWillUnmount() {
+  //   console.log("Component Will Anmount");// component silme islemi gerceklestiginde calisir.
+  // }
 
   render() {
 
