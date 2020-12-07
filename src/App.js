@@ -3,19 +3,24 @@ import "./App.css"
 import AddUser from './components/AddUser'
 import Navbar from "./components/Navbar"
 import Users from "./components/Users"
-import Test from "./components/test"
+
+import {BrowserRouter as Router,Route} from "react-router-dom"
 
 class App extends Component {
   render() {
-    return (
-      <div className="container">
-        <Test test="deneme"/>
-        <Navbar title="User App"/>
-        <hr/>
-        <AddUser/>
-        <Users/>
+    return ( // router icine aliyoruz ve route compnenti icinde yazmak istedigimiz compponenti yaziyoruz. oath kismi sadece / olunca anasayfada gosterilecek componentleri aktif eder. ad user icin path kismini /add yaptik yani localhost:3000/add diyince add user componenti gözükür ayri sayfa gibi
+      <Router>
+        <div className="container">
+          {/* <Test test="deneme"/> */}
+          <Navbar title="User App"/>
+          <hr/>
+          <Route exact path="/" component ={Users}/>
+          <Route exact path="/add" component ={AddUser}/>
 
-      </div>
+
+
+        </div>
+      </Router>
     )
   }
 }
