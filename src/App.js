@@ -3,8 +3,9 @@ import "./App.css"
 import AddUser from './components/AddUser'
 import Navbar from "./components/Navbar"
 import Users from "./components/Users"
+import NotFound from "./components/NotFound"
 
-import {BrowserRouter as Router,Route} from "react-router-dom"
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 
 class App extends Component {
   render() {
@@ -14,9 +15,11 @@ class App extends Component {
           {/* <Test test="deneme"/> */}
           <Navbar title="User App"/>
           <hr/>
-          <Route exact path="/" component ={Users}/>
-          <Route exact path="/add" component ={AddUser}/>
-
+          <Switch>
+            <Route exact path="/" component ={Users}/>
+            <Route exact path="/add" component ={AddUser}/>
+            <Route component={NotFound}/>
+          </Switch>
 
 
         </div>
