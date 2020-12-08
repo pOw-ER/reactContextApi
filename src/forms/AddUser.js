@@ -59,6 +59,9 @@ class AddUser extends Component {
     const response = await axios.post("http://localhost:3004/users",newUser)
 
     dispatch({type:"ADD_USER",payload:response.data});
+
+    //redirect
+    this.props.history.push("/"); // tkilaninca ana sayfaya yönlendirdik.
   }
 
 
