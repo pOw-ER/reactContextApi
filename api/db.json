@@ -27,6 +27,13 @@
       "salary": "1500",
       "place": "Hamburg",
       "id": "JDJB19Y"
+    },
+    {
+      "name": "Emre Findik",
+      "salary": "800",
+      "department": "Apotheker",
+      "place": "Dortmund",
+      "id": "GZ6o0qS"
     }
   ]
 }
