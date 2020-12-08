@@ -34,6 +34,13 @@
       "department": "Apotheker",
       "place": "Dortmund",
       "id": "GZ6o0qS"
+    },
+    {
+      "name": "Selman Özcan",
+      "salary": "2200",
+      "department": "Ingenieur",
+      "place": "Duisburg",
+      "id": "O-megzl"
     }
   ]
 }

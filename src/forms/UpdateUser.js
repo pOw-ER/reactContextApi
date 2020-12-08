@@ -10,10 +10,21 @@ class UpdateUser extends Component {
     name : "",
     salary : "",
     department :"",
-    place : ""
+    place : "",
+    error : false
   }
 
   // state koyup degistirmek icin onChange = {this.changeInput} taki gibi  bir fonksiyon yazmak gerekir
+
+  validateForm = ()=>{
+    const {name,salary,department,place}= this.state;
+    if (name==="" || salary ==="" || department ==="" || place ===""){
+      return false;
+    }
+    return true;
+  }
+
+
   changeInput = (e)=> {
     this.setState({
       [e.target.name] : e.target.value
@@ -31,6 +42,7 @@ class UpdateUser extends Component {
     })
   }
 
+
   UpdateUser = async (dispatch,e)=>{
     e.preventDefault();
 
@@ -44,6 +56,13 @@ class UpdateUser extends Component {
       place
     }
 
+    if (!this.validateForm()) {
+      this.setState({
+        error : true
+      })
+      return;
+    }
+
     const response = await axios.put(`http://localhost:3004/users/${id}`,updatedUser) // put ile update yapilir ilk degisecek api sonra da yeni update edilecek bilgi girilir.
 
     dispatch({type: "UPDATE_USER", payload : response.data}); // simdi context js te upateuser case i olusatumaliyiz.
@@ -53,7 +72,7 @@ class UpdateUser extends Component {
 
 
   render() {
-    const {name,salary,department,place}= this.state
+    const {name,salary,department,place,error}= this.state
     return <UserConsumer>
       {
         value => {
@@ -67,6 +86,11 @@ class UpdateUser extends Component {
                   <h4>Update User Form</h4>
                 </div>
                 <div className="card-body">
+                  {
+                    error ?
+                    <div className="alert alert-danger">Bitte prüfen Sie Ihre Daten, ob die richtig eingetragen werden...</div>
+                    :null
+                  }
                   <form onSubmit={this.UpdateUser.bind(this,dispatch)}>
                     <div className="form-group">
                       <label htmlFor="name">Name</label>
